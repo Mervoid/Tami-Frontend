@@ -434,7 +434,7 @@ const AddProduct = ({ onProductAdded }: Props) => {
           </button>
           <div
             ref={formContainerRef}
-            className="bg-white w-full max-w-md md:max-w-2xl lg:max-w-4xl rounded-2xl shadow-2xl p-6 md:p-8 relative transition-all duration-500 overflow-y-auto max-h-[90vh] min-h-[70vh] md:min-h-[80vh]"
+            className="dark:bg-gray-900 bg-white w-full max-w-md md:max-w-2xl lg:max-w-4xl rounded-2xl shadow-2xl p-6 md:p-8 relative transition-all duration-500 overflow-y-auto max-h-[90vh] min-h-[70vh] md:min-h-[80vh]"
           >
             <div className="bg-teal-600 -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 p-4 md:p-6 rounded-t-2xl">
               <h4 className="text-xl md:text-2xl text-center font-bold text-white">
@@ -581,7 +581,7 @@ const AddProduct = ({ onProductAdded }: Props) => {
                   </div>
 
                   {/* Especificaciones */}
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="dark:bg-gray-900 dark:border-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-100">
                     <h5 className="font-medium !text-gray-700 mb-3">Especificaciones</h5>
 
                     <div className="mb-3 flex items-center gap-2">
@@ -590,13 +590,13 @@ const AddProduct = ({ onProductAdded }: Props) => {
                         value={nuevaEspecificacion}
                         onChange={(e) => setNuevaEspecificacion(e.target.value)}
                         placeholder="Nueva especificación..."
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                        className="flex-1 px-3 py-2 border dark:border-gray-700 border-gray-300 rounded-lg text-sm"
                         onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addNewSpecification())}
                       />
                       <button
                         type="button"
                         onClick={addNewSpecification}
-                        className="inline-flex items-center gap-1 bg-teal-50 hover:bg-teal-100 text-teal-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                        className="inline-flex items-center gap-1 dark:bg-gray-950 dark:hover:bg-teal-800 dark:hover:text-gray-950 bg-teal-50 hover:bg-teal-100 text-teal-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
@@ -632,7 +632,7 @@ const AddProduct = ({ onProductAdded }: Props) => {
                     </div>
                   </div>
                   {/* Dimensiones */}
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="dark:bg-gray-900 dark:border-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-100">
                     <h5 className="font-medium !text-gray-700 mb-3">Dimensiones</h5>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="form-input">
@@ -645,7 +645,7 @@ const AddProduct = ({ onProductAdded }: Props) => {
                             name="alto"
                             type="number"
                             placeholder="0"
-                            className="w-full pl-4 pr-12 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+                            className="dark:border-gray-700 w-full pl-4 pr-12 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
                           />
                           <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">cm</span>
                         </div>
@@ -660,7 +660,7 @@ const AddProduct = ({ onProductAdded }: Props) => {
                             name="ancho"
                             type="number"
                             placeholder="0"
-                            className="w-full pl-4 pr-12 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+                            className="dark:border-gray-700 w-full pl-4 pr-12 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
                           />
                           <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">cm</span>
                         </div>
@@ -675,7 +675,7 @@ const AddProduct = ({ onProductAdded }: Props) => {
                             name="largo"
                             type="number"
                             placeholder="0"
-                            className="w-full pl-4 pr-12 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
+                            className="dark:border-gray-700 w-full pl-4 pr-12 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition"
                           />
                           <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">cm</span>
                         </div>
@@ -705,7 +705,7 @@ const AddProduct = ({ onProductAdded }: Props) => {
                     : "opacity-0 pointer-events-none"
                   }`}
               >
-                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100 mb-6">
+                <div className="dark:bg-gray-950 dark:border-gray-900 bg-gray-50 p-4 rounded-lg border border-gray-100 mb-6">
                   <h5 className="font-medium !text-gray-700 mb-4">Galería de Imágenes</h5>
                   <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-md text-sm text-blue-800">
                     <p className="font-medium">ℹ️ Instrucciones:</p>
@@ -776,9 +776,9 @@ const AddProduct = ({ onProductAdded }: Props) => {
                   }`}
               >
                 <div className="form-input mb-6">
-                  <label className="block !text-gray-700 text-sm font-medium mb-3">Productos Relacionados:</label>
+                  <label className="block dark:text-gray-300 text-gray-700 text-sm font-medium mb-3">Productos Relacionados:</label>
                   {productos.length > 0 ? (
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-64 overflow-y-auto p-2 bg-gray-50 rounded-lg border border-gray-100">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-64 overflow-y-auto p-2 dark:bg-gray-900 dark:border-gray-950 bg-gray-50 rounded-lg border border-gray-100">
                       {productos.map((item) => (
                         <div
                           key={item.id}

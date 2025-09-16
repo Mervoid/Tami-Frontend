@@ -107,7 +107,7 @@ const ProductosTabla = () => {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-100">
                 <div className="bg-gradient-to-r from-teal-500 to-emerald-600 px-8 py-6 rounded-t-2xl">
                     <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
                         <div>
@@ -126,14 +126,14 @@ const ProductosTabla = () => {
                     </div>
                 </div>
 
-                <div className="p-8 space-y-6 border-b border-gray-100 bg-white">
+                <div className="p-8 space-y-6 border-b border-gray-100 bg-white dark:bg-gray-800">
                     <div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
                         <div className="relative w-full sm:w-80">
-                            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 text-teal-500" />
+                            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 text-teal-500 dark:text-gray-300" />
                             <input
                                 type="text"
                                 placeholder="Buscar productos..."
-                                className="pl-10 w-full rounded-full border-2 border-teal-100 py-3 px-5 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent shadow-sm transition-all duration-300"
+                                className="pl-10 w-full rounded-full border-2 dark:text-gray-100 dark:placeholder-gray-400 dark:bg-gray-900 dark:border-gray-600 border-teal-100 py-3 px-5 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent shadow-sm transition-all duration-300"
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -142,14 +142,14 @@ const ProductosTabla = () => {
                         <button
                             onClick={fetchData}
                             disabled={isLoading}
-                            className="flex items-center gap-2 bg-white text-teal-600 border-2 border-teal-500 hover:bg-teal-50 transition-all duration-300 px-5 py-3 rounded-full text-sm font-bold w-full sm:w-auto justify-center shadow-sm"
+                            className="flex items-center gap-2 dark:bg-gray-950 bg-white text-teal-600 border-2 border-teal-500 hover:bg-teal-50 transition-all duration-300 px-5 py-3 rounded-full text-sm font-bold w-full sm:w-auto justify-center shadow-sm"
                         >
                             <FaSyncAlt className={`h-4 w-4 ${isLoading ? "animate-spin" : ""}`} />
                             {isLoading ? "Cargando..." : "Actualizar Catálogo"}
                         </button>
                     </div>
 
-                    <div className="flex items-center justify-between bg-teal-50 p-4 rounded-xl border border-teal-100 shadow-sm">
+                    <div className="flex items-center dark:bg-gray-900 dark:border-gray-600 justify-between bg-teal-50 p-4 rounded-xl border border-teal-100 shadow-sm">
                         <div className="text-sm font-medium text-teal-700 flex items-center gap-2">
               <span className="bg-teal-500 text-white text-sm font-bold py-1 px-3 rounded-full">
                 {filteredProductos.length}
@@ -161,7 +161,7 @@ const ProductosTabla = () => {
 
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm">
-                        <thead className="bg-teal-50 text-teal-800">
+                        <thead className="bg-teal-50 text-teal-800 dark:bg-gray-950">
                         <tr>
                             {["ID", "NOMBRE", "SECCIÓN", "IMAGEN", "ACCIÓN"].map((head, i) => (
                                 <th key={i} className="px-6 py-4 text-left font-bold tracking-wide uppercase text-xs">
@@ -253,8 +253,8 @@ const ProductosTabla = () => {
 
                 {/* Paginación */}
                 {filteredProductos.length > itemsPerPage && (
-                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 px-8 py-6 bg-teal-50/50 border-t border-teal-100">
-                        <div className="text-sm text-teal-700 font-medium">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 px-8 py-6 dark:bg-gray-950 bg-teal-50/50 border-t border-teal-100">
+                        <div className="text-sm text-teal-700 font-medium dark:bg-gray-950">
                             Mostrando {indexOfFirstItem + 1}-{Math.min(indexOfLastItem, filteredProductos.length)} de {filteredProductos.length} productos
                         </div>
                         <div className="flex gap-2">
@@ -263,13 +263,13 @@ const ProductosTabla = () => {
                                 disabled={currentPage === 1}
                                 className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                                     currentPage === 1
-                                        ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                                        : "bg-teal-500 text-white hover:bg-teal-600 shadow-md hover:shadow-lg"
+                                        ? "bg-gray-100 text-gray-400 dark:bg-gray-600 cursor-not-allowed"
+                                        : "bg-teal-500 text-white dark:bg-gray-900 hover:bg-teal-600 shadow-md hover:shadow-lg"
                                 }`}
                             >
                                 Anterior
                             </button>
-                            <div className="flex items-center justify-center px-4 py-2 bg-white border border-teal-200 rounded-full text-sm font-bold text-teal-700 shadow-sm">
+                            <div className="flex items-center justify-center px-4 py-2 dark:bg-gray-900 bg-white border border-teal-200 rounded-full text-sm font-bold text-teal-700 shadow-sm">
                                 {currentPage} de {totalPages}
                             </div>
                             <button
@@ -277,8 +277,8 @@ const ProductosTabla = () => {
                                 disabled={currentPage === totalPages}
                                 className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
                                     currentPage === totalPages
-                                        ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                                        : "bg-teal-500 text-white hover:bg-teal-600 shadow-md hover:shadow-lg"
+                                        ? "bg-gray-100 text-gray-400 dark:bg-gray-300 cursor-not-allowed"
+                                        : "bg-teal-500 text-white dark:bg-gray-900 hover:bg-teal-600 shadow-md hover:shadow-lg"
                                 }`}
                             >
                                 Siguiente
